@@ -1,4 +1,4 @@
-package com.example.demo.thread.countdownlatch;
+package com.example.demo.thread.tool.countdownlatch;
 
 import java.util.concurrent.CountDownLatch;
 

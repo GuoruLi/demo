@@ -1,4 +1,4 @@
-package com.example.demo.thread.cyclicbarrier;
+package com.example.demo.thread.tool.cyclicbarrier;
 
 import java.util.Map;
 import java.util.concurrent.*;
@@ -16,7 +16,7 @@ public class BankWaterService implements Runnable {
     /**
      * 假设只有4个sheet，所以只启动4个线程
      */
-    private Executor executor = Executors.newFixedThreadPool(4);
+    private ExecutorService executor = Executors.newFixedThreadPool(4);
     /**
      * 保存每个sheet计算出的银流结果
      */
@@ -52,6 +52,7 @@ public class BankWaterService implements Runnable {
         // 将结果输出
         sheetBankWaterCount.put("result", result);
         System.out.println(Thread.currentThread().getName() + "执行结果:" + result);
+        executor.shutdown();
     }
 
     public static void main(String[] args) {
