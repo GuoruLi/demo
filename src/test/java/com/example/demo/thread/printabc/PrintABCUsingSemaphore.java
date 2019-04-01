@@ -1,4 +1,4 @@
-package com.example.demo.thread;
+package com.example.demo.thread.printabc;
 
 import java.util.concurrent.Semaphore;
 
