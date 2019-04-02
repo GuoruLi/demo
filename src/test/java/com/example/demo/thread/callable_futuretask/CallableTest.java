@@ -4,6 +4,7 @@ import java.util.concurrent.*;
 
 /**
  * Created by Ruby on 2019/4/1.
+ * Future接口和实现Future接口的FutureTask类，代表异步计算的结果
  */
 public class CallableTest {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
@@ -39,10 +40,10 @@ public class CallableTest {
 
         //  执行方法二
         ExecutorService executorService = Executors.newSingleThreadExecutor();
-        executorService.execute(futureTask);
+        executorService.execute(futureTask);//无返回值
 
         //  执行方法三
-        executorService.submit(futureTask);
+        Future future = executorService.submit(futureTask);//future.get可以获取结果或异常
 
         //  执行方法四
         futureTask.run();
